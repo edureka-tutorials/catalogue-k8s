@@ -18,7 +18,7 @@ app.config['SECRET_KEY'] = 'secret'
 mongourl = os.environ['MONGO_URL']
 mongoid = os.environ['MONGO_ID']
 mongopass = os.environ['MONGO_PASS']
-
+client = pymongo.MongoClient('mongodb://%s:%s@%s:27017/' % (mongoid, mongopass, mongourl))
 
 db = client["productDb"]
 
